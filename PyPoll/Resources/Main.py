@@ -80,7 +80,7 @@ print("------------------------")
 
 for count in range(len(CandidatePool)):
 
-   print(f"{CandidatePool[count]}: {PercentageOfVotes[count]}% ({VotesPerCandidate[count]})")
+   print(f"{CandidatePool[count]}: {PercentageOfVotes[count]:.3f}% ({VotesPerCandidate[count]:,})")
 
 print("------------------------")
 
@@ -92,6 +92,7 @@ OutFile = os.path.dirname(os.path.abspath(__file__))
 
 SummaryFileExport = os.path.join(OutFile, "election_summary.txt")
 
+#Writing and saving output into a .txt file
 with open(SummaryFileExport, 'w') as TextFile:
      TextFile.write(" \n\n\n")
      TextFile.write("Election Results Summary\n")
@@ -100,7 +101,7 @@ with open(SummaryFileExport, 'w') as TextFile:
      TextFile.write("--------------------------------\n")
      
      for count in range(len(CandidatePool)):
-        TextFile.write(f"{CandidatePool[count]}: {PercentageOfVotes[count]}% ({VotesPerCandidate[count]})\n")
+        TextFile.write(f"{CandidatePool[count]}: {PercentageOfVotes[count]:.3f}% ({VotesPerCandidate[count]})\n")
      
      TextFile.write("--------------------------------\n")
      TextFile.write(f"Winner: {ElectionWinner}\n")
